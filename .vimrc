@@ -56,9 +56,6 @@ Plug 'w0rp/ale'
 " 🔣 Adds file type glyphs/icons to popular Vim plugins: NERDTree, vim-airline, Powerline, Unite, vim-startify and more
 Plug 'ryanoasis/vim-devicons'
 
-" Quantify your coding inside Vim.
-Plug 'wakatime/vim-wakatime'
-
 " Vastly improved Javascript indentation and syntax support in Vim. https://www.vim.org/scripts/script.php?script_id=4452
 Plug 'pangloss/vim-javascript'
 

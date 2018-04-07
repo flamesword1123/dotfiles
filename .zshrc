@@ -1,7 +1,7 @@
 #; Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
-#fortune | cowsay -f tux | lolcat
+# fortune | cowsay -f tux | lolcat
 
 # Run spectrum_ls to see a list of colors zsh can easily produce and
 # which can be used in a theme
@@ -11,9 +11,24 @@ ZSH_SPECTRUM_TEXT=${ZSH_SPECTRUM_TEXT:-Arma virumque cano Troiae qui primus ab o
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+ZSH_THEME="bullet-train"
 DEFAULT_USER=`whoami`
 
+BULLETTRAIN_PROMPT_ORDER=(
+  status
+  custom
+  dir
+  screen
+  nvm
+  ruby
+  virtualenv
+  aws
+  go
+  git
+  cmd_exec_time
+)
+
+BULLETTRAIN_PROMPT_ADD_NEWLINE=false
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -34,7 +49,7 @@ DEFAULT_USER=`whoami`
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 unsetopt correct_all
 
 # Uncomment the following line to display red dots whilst waiting for completion.
@@ -57,7 +72,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf)
+plugins=(git fzf extract)
 
 # User configuration
 
@@ -76,7 +91,7 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"

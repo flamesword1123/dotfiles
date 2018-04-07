@@ -1,7 +1,7 @@
 #; Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
-fortune | cowsay -f tux | lolcat
+#fortune | cowsay -f tux | lolcat
 
 # Run spectrum_ls to see a list of colors zsh can easily produce and
 # which can be used in a theme
@@ -93,8 +93,8 @@ export EDITOR='vim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias sub="open -a 'Sublime Text'"
-alias deis="cd /Users/samuelbernheim/Google\ Drive/Brandeis/Year\ 3"
-alias gproj="cd ~/Github-Projects"
+alias gproj="cd ~/Desktop/Github-Projects"
+alias vis="open -a 'Visual Studio Code'"
 
 # type "fd" to open a directory using fzf
 fd() {

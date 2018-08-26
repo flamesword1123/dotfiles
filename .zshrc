@@ -174,19 +174,6 @@ prompt_zsh_battery_level() {
   echo -n "%{$color%}$symbol" ;
 }
 
-zsh_docker_signal() {
-	local color
-	local symbol="\uf308"
-	docker=$(docker ps)
-	if [ $? = 0 ]; then
-		color="%F{green}"
-	else
-		color="%F{red}"
-	fi
-
-	echo -n "%{$color%}$symbol |"
-}
-
 zsh_internet_signal(){
   local color
   local symbol="\uf7ba"
@@ -233,7 +220,6 @@ POWERLEVEL9K_STATUS_VERBOSE=false
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{blue}\u256D\u2500%f"
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{blue}\u2570\uf460%f "
-POWERLEVEL9K_CUSTOM_DOCKER_SIGNAL="zsh_docker_signal"
 POWERLEVEL9K_CUSTOM_INTERNET_SIGNAL="zsh_internet_signal"
 POWERLEVEL9K_BATTERY_CHARGING='yellow'
 POWERLEVEL9K_BATTERY_CHARGED='green'
@@ -241,7 +227,7 @@ POWERLEVEL9K_BATTERY_DISCONNECTED='$DEFAULT_COLOR'
 POWERLEVEL9K_BATTERY_LOW_THRESHOLD='10'
 POWERLEVEL9K_BATTERY_LOW_COLOR='red'
 POWERLEVEL9K_BATTERY_ICON='\uf1e6'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir context custom_docker_signal_joined custom_internet_signal_joined battery root_indicator dir_writable vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir context custom_internet_signal_joined battery root_indicator dir_writable vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time node_version status host user)
 HIST_STAMPS="mm/dd/yyyy"
 DISABLE_UPDATE_PROMPT=true

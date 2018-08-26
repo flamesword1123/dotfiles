@@ -6,11 +6,8 @@ call plug#begin('~/.vim/plugged')
 " Next generation completion framework after neocomplcache
 Plug 'Shougo/deoplete.nvim'
 
-" Dependency for vimfiler
-Plug 'Shougo/unite.vim'
-
 " A tree explorer plugin for vim.
-Plug 'Shougo/vimfiler'
+Plug 'scrooloose/nerdtree'
 
 " Vim plugin for intensely orgasmic commenting
 Plug 'scrooloose/nerdcommenter'
@@ -176,8 +173,10 @@ nnoremap <Leader>q :bp <BAR> bd #<CR>
 nnoremap <Leader>sp :vsplit<CR>
 nnoremap <Leader>hsp :split<CR>
 
-" Vertically resize a window
+" Vertically and horizontally resize a window
 nnoremap <Leader>vrs :vertical resize
+nnoremap <Leader>hrs :resize
+
 
 " Use tt to togle the tagbar open and close
 nnoremap tt :TagbarToggle<CR>
@@ -213,14 +212,23 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 
 " #########################
+" ###### NERDTree
 " ###### VimFiler
 " ########################
 
-let g:vimfiler_tree_opened_icon = '▿'
-let g:vimfiler_tree_closed_icon = '▸'
+" Toggle NERDTree
+nnoremap <Leader>d :NERDTreeToggle<CR>
+nnoremap <Leader>nt :NERDTree<CR>
 
-noremap <Leader>d :VimFilerExplorer<CR>
-nmap <Leader>i <Plug>(vimfiler_toggle_visible_dot_files)
+
+" Choose the arrow character NERDTree will use
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▿'
+" ▾
+" Have NERDTree be open automatically when vim starts --> Handled by cmd for use with startify
+" autocmd VimEnter * NERDTree
+
+" let NERDTreeShowHidden=1
 
 
 
@@ -316,7 +324,7 @@ let g:startify_update_oldfiles = 1
 autocmd VimEnter *
 \   if !argc()
 \ |   Startify
-\ |   VimFilerExplorer -direction=topleft
+\ |   NERDTree
 \ |   wincmd w
 \ | endif
 
@@ -378,14 +386,10 @@ let g:ale_linters = {
 \	'SCSS': ['styleint'],
 \}
 
-
-
 " #########################
 " ###### Vim Devicons
 " ########################
 
 " the amount of space to use after the glyph character (default ' ')
-let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
-
-" adding the column to vimfiler
-let g:webdevicons_enable_vimfiler = 1
+let g:WebDevIconsUnicodeDecorateFolderNodes = 0
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '

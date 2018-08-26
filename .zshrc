@@ -92,6 +92,8 @@ alias vis="open -a 'Visual Studio Code'"
 # https://github.com/sharkdp/bat
 alias cat="bat"
 alias preview="fzf --preview 'bat --color \"always\" {}'"
+alias gd50="cd Desktop/Game\ Design/GD50"
+alias love="/Applications/love.app/Contents/MacOS/love"
 
 # type "fd" to open a directory using fzf
 fd() {
